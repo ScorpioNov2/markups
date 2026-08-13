@@ -1,4 +1,4 @@
-name: Deploy to github page
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -6,10 +6,12 @@ on:
       - main
   workflow_dispatch:
 
-jobs:
-  run-script:
-    runs-on: ubuntu-latest
+permissions:
+  contents: write
 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -17,5 +19,5 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist          # dist/ in main
-          branch: gh-pages      # created branch
+          folder: dist
+          branch: gh-pages
