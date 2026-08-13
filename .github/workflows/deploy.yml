@@ -1,4 +1,4 @@
-name: Run Dist Script
+name: Deploy to github page
 
 on:
   push:
@@ -23,4 +23,4 @@ jobs:
         run: npm install
 
       - name: Run Node script
-        run: node dist/index.js
+        run: node dist/index.html
