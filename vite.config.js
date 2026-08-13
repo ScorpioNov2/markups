@@ -54,6 +54,7 @@ export default defineConfig(({ mode }) => {
         css: {
             devSourcemap: false
         },
+        base: '/markups/',
         build: {
             target: 'es2020',
             cssCodeSplit: true,
